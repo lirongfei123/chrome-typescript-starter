@@ -19,7 +19,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "experimentalDecorators": true,
-    "noEmit": true,
+    "noEmit": false,
     "jsx": "preserve"
   },
   "include": [

@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/css/baidu.css"],"names":[],"mappings":"AAAA;AACA,2BAA2B;;AAE3B;AACA,yBAAyB","file":"baidu.css","sourcesContent":[".trans-operation-wrapper, .translateio, .header, .trans-right.trans-other-right {\n  display: none !important; }\n\n.trans-left {\n  width: auto !important; }\n"],"sourceRoot":""}

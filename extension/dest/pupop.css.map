@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/css/pupop.scss"],"names":[],"mappings":"AAAA;AACA;AACA;AACA,sBAAsB","file":"pupop.css","sourcesContent":[".bodybg {\n  width: 350px;\n  padding: 15px;\n  margin-bottom: 80px; }\n"],"sourceRoot":""}
