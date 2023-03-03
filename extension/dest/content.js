@@ -94,8 +94,36 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvanMvY29udGVudC50cy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9qcy9jb250ZW50LnRzPzVhZTMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGRlZmF1bHQge307XG4iXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7Iiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/js/content.ts\n");
+__webpack_require__.r(__webpack_exports__);
+var titles = document.querySelectorAll('a[class*="SummaryTile"] span');
+const titlesArr = [...titles];
+const updateResult = {};
+for (let i = 0; i < titlesArr.length; i++) {
+    // @ts-ignore
+    var source = titlesArr[i].parentNode.getElementsByTagName('img')[0];
+    const srcset = source.getAttribute('srcset');
+    var reg = /^(https[^ ]+) 1x, (https[^ ]+) 2x$/;
+    // @ts-ignore
+    const poki_url = titlesArr[i].parentNode.href;
+    var result = reg.exec(srcset);
+    if (result) {
+        var img1x = result[1];
+        var img2x = result[2];
+        updateResult[poki_url] = {
+            img1x,
+            img2x,
+        };
+    }
+}
+// @ts-ignore
+chrome.runtime.sendMessage({
+    type: 'updateResult',
+    data: updateResult
+});
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
 
 /***/ })
 
 /******/ });
+//# sourceMappingURL=content.js.map

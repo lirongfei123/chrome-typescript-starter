@@ -5,7 +5,7 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'cheap-eval-source-map',
+  devtool: 'source-map',
   plugins: [
     new Webpack.DefinePlugin({
       'baseUrl': JSON.stringify('http://localhost:3009')

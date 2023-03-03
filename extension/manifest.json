@@ -1,10 +1,8 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
-  "name":"\u831c\u8363\u5b66\u4e60",
-  "version": "1.0.5",
-  "manifest_version": 2,
-  "description": "study-english",
+  "name":"xiaoyouxi",
+  "version": "1.0.2",
+  "manifest_version": 3,
+  "description": "xiaoyouxi",
   "icons": {
     "16": "imgs/16.png",
     "24": "imgs/24.png",
@@ -21,25 +19,22 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*","https://*/*"],
-      "run_at":"document_start",
+      "matches": ["https://poki.com/*"],
+      "run_at":"document_end",
       "all_frames":true,
       "js": ["dest/content.js"]
     }
   ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://fanyi.mlife.top; object-src 'self'",
+  "content_security_policy": {
+    "script-src": "self unsafe-eval",
+    "unsafe-eval": "object-src self",
+    "unsafe-inline": "self"
+  },
   "web_accessible_resources":[
-      "dest/*",
-      "imgs/*",
-      "bootstrap/*"
   ],
   "background": {
-    "page": "background.html"
+    "service_worker": "dest/background.js"
   },
   "permissions": [
-    "<all_urls>",
-    "contextMenus",
-    "https://*/*",
-    "http://*/*"
   ]
 }

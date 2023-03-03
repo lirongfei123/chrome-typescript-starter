@@ -61,7 +61,7 @@ module.exports = {
         loader: "art-template-loader"
       },
       {
-        test: /\.s?css/i,
+        test: /\.css/i,
         use : [
           MiniCssExtractPlugin.loader,
           'css-loader',
