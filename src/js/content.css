@@ -1,3 +1,12 @@
-#con-ceiling-wrapper, #con-ar {
+#con-ceiling-wrapper .result-op {
     display: none!important;
+}
+.s-mancacrd-main {
+    display: none!important;
+}
+#s_main .baidu_hot_pingbi {
+    justify-content: center;
+}
+.baidu_hot_pingbi {
+    display: flex;
 }

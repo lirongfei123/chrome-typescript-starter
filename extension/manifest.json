@@ -1,6 +1,6 @@
 {
   "name":"\u767E\u5EA6\u70ED\u641C\u5C4F\u853D",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "manifest_version": 3,
   "description": "屏蔽百度热搜，避免受影响",
   "icons": {
@@ -13,9 +13,10 @@
     "96": "imgs/96.png",
     "128": "imgs/128.png"
   },
-  "browser_action": {
-      "default_icon": "imgs/16.png",
-      "default_popup": "popup.html"
+  "action": {
+    "default_title": "default_title",
+    "default_icon": "imgs/16.png",
+    "default_popup": "popup.html"
   },
   "content_scripts": [
     {
@@ -27,13 +28,15 @@
     }
   ],
   "content_security_policy": {
-    "script-src": "self unsafe-eval",
+    "script-src": "script-src 'self' object-src",
     "unsafe-eval": "object-src self",
     "unsafe-inline": "self"
   },
   "web_accessible_resources":[
   ],
   "background": {
+    "service_worker": "dest/background.js",
+    "type": "module"
   },
   "permissions": [
   ]
