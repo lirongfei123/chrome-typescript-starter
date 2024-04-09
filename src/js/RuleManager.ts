@@ -3,6 +3,8 @@ import BaseRule from "./BaseRule";
 export default class RuleManager {
     rules: BaseRule[] = [];
     contentData = {}
+    interTime = 500;
+    interCount = 0;
     addRule(RuleClass: typeof BaseRule) {
         const exist = this.rules.find(item => {
             return item.constructor === RuleClass;
@@ -17,6 +19,11 @@ export default class RuleManager {
                 this.rules[i].run(this.contentData);
             } catch(e) {}
         }
+        this.interCount++;
+        if (this.interCount > 3) {
+            this.interTime = 10000;
+        }
+        setTimeout(this.run.bind(this), this.interTime);
     }
     start() {
         // @ts-ignore
@@ -25,7 +32,6 @@ export default class RuleManager {
             // @ts-ignore
         }, (data: any) => {
             this.contentData = data;
-            setInterval(this.run, 5000);
             this.run();
         });
     }

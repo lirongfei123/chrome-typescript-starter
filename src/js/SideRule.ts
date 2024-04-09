@@ -16,6 +16,12 @@ export class SideRule extends BaseRule {
                     parentNode = parentNode.parentNode;
                 }
             }
+            if (location.hostname == 'baijiahao.baidu.com') {
+                console.log('------');
+                if (aHot.parentNode) {
+                    return aHot.parentNode.parentNode;
+                }
+            }
         } else {
             return null;
         }

@@ -1,6 +1,6 @@
 {
   "name":"\u767E\u5EA6\u70ED\u641C\u5C4F\u853D",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "manifest_version": 3,
   "description": "屏蔽百度热搜，避免受影响",
   "icons": {
@@ -20,7 +20,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.baidu.com/*"],
+      "matches": ["https://*.baidu.com/*"],
       "run_at":"document_end",
       "all_frames":true,
       "css": ["dest/content.css"],

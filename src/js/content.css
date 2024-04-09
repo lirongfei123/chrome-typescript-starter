@@ -1,6 +1,9 @@
 #con-ceiling-wrapper .result-op {
     display: none!important;
 }
+div[title="百度热搜"] {
+    background-color: red;
+}
 .s-mancacrd-main {
     display: none!important;
 }
@@ -9,4 +12,15 @@
 }
 .baidu_hot_pingbi {
     display: flex;
+}
+.s_form_nologin .s-hotsearch-wrapper {
+    display: none;
+}
+.s_form_nologin .baidu_hot_pingbi {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+#ssr-content ._1vKLg {
+    display: none;
 }
